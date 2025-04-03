@@ -1,0 +1,16 @@
+# Using spring-ai-starter-mcp-server
+spring:
+  main:
+    web-application-type: servlet
+  ai:
+    mcp:
+      server:
+        stdio: false
+        sse-message-endpoint: /mcp/messages
+        enabled: true
+        name: mcpserver
+        version: 1.0.0
+        type: SYNC
+        resource-change-notification: true
+        tool-change-notification: true
+        prompt-change-notification: true
