@@ -1,16 +1,21 @@
-# Using spring-ai-starter-mcp-server
+server:
+  port: 8080
+
 spring:
+  application:
+    name: mcpserver
   main:
     web-application-type: servlet
   ai:
     mcp:
       server:
-        stdio: false
-        sse-message-endpoint: /mcp/messages
         enabled: true
-        name: mcpserver
+        name: my-tool
+        description: 天气查询 MCP 服务
         version: 1.0.0
+        protocol: STREAMABLE
         type: SYNC
-        resource-change-notification: true
-        tool-change-notification: true
-        prompt-change-notification: true
+        # 工具/资源/Prompt 均为静态，无需运行时变更通知
+        tool-change-notification: false
+        resource-change-notification: false
+        prompt-change-notification: false
