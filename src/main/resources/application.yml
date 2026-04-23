@@ -10,7 +10,7 @@ spring:
     mcp:
       server:
         enabled: true
-        name: my-tool
+        name: weather-tool
         description: 天气查询 MCP 服务
         version: 1.0.0
         protocol: STREAMABLE
